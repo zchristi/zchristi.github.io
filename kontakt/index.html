@@ -177,8 +177,7 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 		<div class="entry-content clearfix">
 		<p>Möchtest du einen Termin vereinbaren, dich für einen Workshop anmelden oder hast eine Frage?</p>
 <p>Dann nutze doch das Kontaktformular:</p>
-<form method="POST" action="https://formspree.io/info" + "@" + "ayurveda-" + "guestrow.de">
-  <!--p>Betreff:</p-->
+<form id="contactform" method="POST" action="">
     <fieldset>
     <label>Betreff:</label>
     <ul  style="list-style: none;">
@@ -196,6 +195,9 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 <input type="hidden" name="_language" value="de" />
   <button type="submit">Senden</button><br />
 </form>
+<script type="text/javascript">
+    document.getElementById("contactform").setAttribute('action', "info" + "@" + atob("YXl1cnZlZGEtZ3Vlc3Ryb3cuZGU=");
+</script>
 			</div>
 	<footer class="entry-meta-bar clearfix">	        			
 		<div class="entry-meta clearfix">

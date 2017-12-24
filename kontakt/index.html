@@ -177,14 +177,16 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 		<div class="entry-content clearfix">
 		<p>Möchtest du einen Termin vereinbaren, dich für einen Workshop anmelden oder hast eine Frage?</p>
 <p>Dann nutze doch das Kontaktformular:</p>
-<form method="POST" action="http://formspree.io/info" + "@" + "ayurveda-" + "guestrow.de">
+<form method="POST" action="https://formspree.io/info" + "@" + "ayurveda-" + "guestrow.de">
   <div style="padding-bottom: 25px;"><label>Betreff:
-    <select name="_subject"> 
-        <option>Ich möchte einen Termin</option> 
-        <option>Anmeldung | Workshop Tagesroutine nach Ayurveda</option> 
-        <!--option>Anmeldung | Vortrag "Ayurveda - Was ist das eigentlich?"</option--> 
-        <option>Ich habe eine Frage</option> 
-    </select>
+    <fieldset>
+        <input type="radio" id="termin" name="_subject" value="Ich möchte einen Termin">
+        <label for="termin"> Ich möchte einen Termin</label>
+        <input type="radio" id="workshop02" name="_subject" value="Anmeldung | Workshop Tagesroutine nach Ayurveda">
+        <label for="workshop2"> Anmeldung | Workshop Tagesroutine nach Ayurveda</label>
+        <input type="radio" id="frage" name="_subject" value="Ich habe eine Frage">
+        <label for="frage"> Ich habe eine Frage</label>
+    </fieldset>
   </label></div>
   <input type="email" name="email" placeholder="Deine Emailadresse (Pflichtfeld)"><br />
   <textarea name="message" placeholder="Deine Nachricht (Bitte Adresse und Telefonnummer angeben!)"></textarea><br />
@@ -245,7 +247,7 @@ document.write('<p><a href="mailto:' + infomail + '">Mail: ' + infomail + '</a><
 </div>
 		</aside>			</div>
 			<div class="tg-one-fourth tg-one-fourth-last tg-column-4">
-				<aside id="text-11" class="widget widget_text"><h3 class="widget-title"><span>Aktuelle Workshops</span></h3>			<div class="textwidget"><p><b>Tagesroutine nach Ayurveda</b> am 6. Januar 2018 um 10 Uhr. Für mehr Informationen<a href="/workshops/"> hier klicken.</a></p>
+				<aside id="text-11" class="widget widget_text"><h3 class="widget-title"><span>Aktuelle Workshops</span></h3>			<div class="textwidget"><p><b>"Tagesroutine nach Ayurveda"</b> am 6. Januar 2018 um 10 Uhr. Für mehr Informationen<a href="/workshops/"> hier klicken.</a></p>
 </div>
 		</aside>			</div>
 		</div>

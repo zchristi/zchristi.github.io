@@ -178,16 +178,18 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 		<p>Möchtest du einen Termin vereinbaren, dich für einen Workshop anmelden oder hast eine Frage?</p>
 <p>Dann nutze doch das Kontaktformular:</p>
 <form method="POST" action="https://formspree.io/info" + "@" + "ayurveda-" + "guestrow.de">
-  <div style="padding-bottom: 25px;"><label>Betreff:
+  <!--p>Betreff:</p-->
     <fieldset>
-        <input type="radio" id="termin" name="_subject" value="Ich möchte einen Termin">
+    <label>Betreff:</label>
+    <ul  style="list-style: none;">
+        <li><input type="radio" id="termin" name="_subject" value="Ich möchte einen Termin">
         <label for="termin"> Ich möchte einen Termin</label>
-        <input type="radio" id="workshop02" name="_subject" value="Anmeldung | Workshop Tagesroutine nach Ayurveda">
+        <li><input type="radio" id="workshop02" name="_subject" value="Anmeldung | Workshop Tagesroutine nach Ayurveda">
         <label for="workshop2"> Anmeldung | Workshop Tagesroutine nach Ayurveda</label>
-        <input type="radio" id="frage" name="_subject" value="Ich habe eine Frage">
+        <li><input type="radio" id="frage" name="_subject" value="Ich habe eine Frage">
         <label for="frage"> Ich habe eine Frage</label>
     </fieldset>
-  </label></div>
+</ul>
   <input type="email" name="email" placeholder="Deine Emailadresse (Pflichtfeld)"><br />
   <textarea name="message" placeholder="Deine Nachricht (Bitte Adresse und Telefonnummer angeben!)"></textarea><br />
 <input type="hidden" name="_next" value="//ayurveda-guestrow.de/prima-hat-alles-geklappt" />

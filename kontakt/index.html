@@ -178,7 +178,7 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 		<div class="entry-content clearfix">
 		<p>Möchtest du einen Termin vereinbaren, dich für einen Workshop anmelden oder hast eine Frage?</p>
 <p>Dann nutze doch das Kontaktformular:</p>
-<form id="contactform" method="POST" action="submit">
+<form id="contactform">
     <fieldset>
     <label>Betreff:</label>
     <ul  style="list-style: none;">
@@ -225,11 +225,11 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
                     _next: _next,
                     _language: _language
 				}, 
-				error: function(xhr, status, err){ /* tell user we failed to send message */ },
-				success: function(data, status, xhr){ /* report success to user */ }
+				error: function(xhr, status, err){console.log("failed to send");},
+				success: function(data, status, xhr){console.log("form submitted!");}
 			})
 		}).catch(function(){
-			// tell user we failed to encrypt message.
+			console.log("failed to encrypt");
 		});
 	});
 })()

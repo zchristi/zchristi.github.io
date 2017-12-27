@@ -178,7 +178,7 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 		<div class="entry-content clearfix">
 		<p>Möchtest du einen Termin vereinbaren, dich für einen Workshop anmelden oder hast eine Frage?</p>
 <p>Dann nutze doch das Kontaktformular:</p>
-<form id="contactform">
+<form id="contactform" action="//formspree.io/info@ayurveda-guestrow.de" action="post">
     <fieldset>
     <label>Betreff:</label>
     <ul  style="list-style: none;">
@@ -220,13 +220,14 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 				dataType: 'json',
 				data: {
 					email: email,
-					message: msg.data,
+					message: "Testnachricht", //msg.data,
                     _subject: _subject,
                     _next: _next,
                     _language: _language
 				}, 
 				error: function(xhr, status, err){console.log("failed to send");},
-				success: function(data, status, xhr){console.log("form submitted!");}
+				success: function(data, status, xhr){console.log("form submitted: " + data); 
+    console.log("status: " + status); console.log("xhr: " + xhr)}
 			})
 		}).catch(function(){
 			console.log("failed to encrypt");

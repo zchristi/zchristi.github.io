@@ -206,9 +206,9 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 		e.preventDefault();
 		var email = jQuery("#contactform input[name=email]")[0].value;
 		var message = jQuery("#contactform textarea[name=message]")[0].value;
-        var _subject = jQuery("#contactform input[name=_subject]")[0].value;
-        var _next = "//ayurveda-guestrow.de/prima-hat-alles-geklappt";
-        var _language = "de";
+        var subject = jQuery("#contactform input[name=_subject]:checked")[0].value;
+        var next = "//ayurveda-guestrow.de/prima-hat-alles-geklappt";
+        var language = "de";
 		openpgp.encrypt({
 			data: message,
 			publicKeys: publicKeys
@@ -220,10 +220,10 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 				dataType: 'json',
 				data: {
 					email: email,
-					message: "Testnachricht", //msg.data,
-                    _subject: _subject,
-                    _next: _next,
-                    _language: _language
+					message: msg.data,
+                    _subject: subject,
+                    _next: next,
+                    _language: language
 				}, 
 				error: function(xhr, status, err){console.log("failed to send");},
 				success: function(data, status, xhr){console.log("form submitted: " + data); 

@@ -36,6 +36,7 @@ img.emoji {
 <link rel='stylesheet' id='mb-css'  href='/wp-content/plugins/mango-buttons/public/style/mb-button.css?ver=1.2.9' type='text/css' media='all' />
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 <script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='/wp-includes/js/openpgp.min.js'></script>
 <script type='text/javascript' src='/wp-content/themes/spacious/js/spacious-custom.js?ver=4.9'></script>
 <!--[if lte IE 8]>
 <script type='text/javascript' src='/wp-content/themes/spacious/js/html5shiv.min.js?ver=4.9'></script>
@@ -177,7 +178,7 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 		<div class="entry-content clearfix">
 		<p>Möchtest du einen Termin vereinbaren, dich für einen Workshop anmelden oder hast eine Frage?</p>
 <p>Dann nutze doch das Kontaktformular:</p>
-<form id="contactform" method="POST" action="">
+<form id="contactform" method="POST" action="submit">
     <fieldset>
     <label>Betreff:</label>
     <ul  style="list-style: none;">
@@ -196,7 +197,42 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
   <button type="submit">Senden</button><br />
 </form>
 <script type="text/javascript">
-    document.getElementById("contactform").setAttribute('action', "https://formspree.io/info" + "@" + atob("YXl1cnZlZGEtZ3Vlc3Ryb3cuZGU="));
+(function(){
+	// public PGP key for info@(thisdomain)
+	var publicKeys = openpgp.key.readArmored('-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nmQENBFpADQIBCADQYwVzjwYv42slkStcw9+YoipjUvI2SqL/I5S8DRwzbbakYeHW\n8BbrUHJdyoKuKtjaMG6PTvJffxwv1cSBB5DXpPRaqTwB1E7ACDrUi/in7CIlS1ZI\n0pJ6BWqht60bU0Xtfi6ANyV406eEA9djPuUbkXVJjZecyMR7nPeK7wcwvbm1Za+K\nBVJOlc16Kf5mKiOPZDQdt5VGLBajUCb4c5n6rM3p+QYYrAfSNcQaHyFLi0FWb4pc\nykXurSa5931sz23/gwtM1gxLR1RXQfZYaGlRfruBzLkZyBunOxkX1HnJnZsd5i8O\n1BBUf0tpEAHmQJZ9/uYTJ4i4exLSN3tptVABABEBAAG0KlN5bHZpYSBTY2htaWR0\nIDxpbmZvQGF5dXJ2ZWRhLWd1ZXN0cm93LmRlPokBVAQTAQgAPgIbAwULCQgHAgYV\nCAkKCwIEFgIDAQIeAQIXgBYhBPQtUs33NI8WLdPEVXHuewFps0gsBQJaQA2zBQkD\nyx0uAAoJEHHuewFps0gs+/EH/0aq7+TMEu9hfRpuye3bHB2sWmHr87FqaiN/HuvK\nNf82SJyd+JPJ+hfwWIOyjuVQiwmatcGsQuqSAihHz4XUJ59K5OWjjnYfckuNU00E\nAwpjKFJOV7kIPiUux6kVWc6HXBEt7wlW7ixoIH4bAdHaa3mQKpMMLNKPWegCxElz\nA3qDtBKSznQXUUj8lYdruv+6LomeWhOlxl5lQspUs4hOKdmFsk8VKhDqqcSisBWr\nzz76rfWRm/TQJyWcF6c5r52JtQowYjDBqe1JTxlXiYK+yq0PsaljyxAyhKMQs4eb\n9nCbJrl9V6L2ZNf5v1T7QEueKKfYPzjwPAf4M0GPkBAoQnm5AQ0EWkANAgEIAO4Y\npGIt2+/cLVvE8wIxE2xxSUTfAxcQnwLFXohO4I73ounQfPGwQMATXafkwlWz7MoB\niFnV6uERkZsaihtKnn+rD6L04O0zTx3qClpUa9VYPeWuP6wkEY/gsIB1F5eSCbHL\nEbPI718wMGOjFGbC29qx1atgIMjpPOjhK/oBtTY1RPXTtB5vjHleq4JmsgHVwS6E\nraS/TgavLLu8SK47m3uzrFFtkhFvYcniyb5Qtao/YkpPLMSoAwB8P3/1GrOmhtf6\nXfdnV38iX5qEFen1WMqeYsmb9yzs+xzgyD4ZarOVvec2cEIjcbLxGS3JH5IephyX\nEV2TuBNFv7MxsG5KrQ8AEQEAAYkBNgQYAQgAIBYhBPQtUs33NI8WLdPEVXHuewFp\ns0gsBQJaQA0CAhsMAAoJEHHuewFps0gs3XwH/i6K56AtwpzulB3Rtindy6ADkiKt\nQRAMFBo/TdcvkmvPSkd6f4gEf8uj1yz6b31Ocx28hU0RhGtKNB5j5LirVhe5gsl/\n099RiAdFA8LTVMB6fdf8F0n0c5T/jqws4z0wtSdCOtcMRjCOKcP3GE0yC2ZIK6hY\n64H8mgf3HMTLY/xDbDWpmzHTELeHPIXvEBKJ9IbGYXs+iwp34oCzobZKBa4D98bu\nlanwkl2pwMeQnxypORvauhmJV1NiOv1rntpKbJTV94uyzAbiYk3aBxwgMNMf+Wek\nWsthFcx3hKWLtl27TvZ7syOTGJl5E+27HKDrpGUsUsIGgZxtbnr+50zsBbI=\n=PsO1\n-----END PGP PUBLIC KEY BLOCK-----').keys;
+
+	var contactForm = $('form#contactform');
+	contactForm.on('submit', function(e){
+		e.preventDefault();
+		var email = $("#contactform input[name=email]")[0].value;
+		var message = $("#contactform textarea[name=message]")[0].value;
+        var _subject = $("#contactform input[name=_subject]")[0].value;
+        var _next = "//ayurveda-guestrow.de/prima-hat-alles-geklappt";
+        var _language = "de";
+		openpgp.encrypt({
+			data: message,
+			publicKeys: publicKeys.keys
+		}).then(function(msg){
+			// encryption done... send data...
+			$.ajax({
+				url: 'https://formspree.io/info@ayurveda-guestrow.de',
+				method: 'POST',
+				dataType: 'json',
+				data: {
+					email: email,
+					message: msg.data,
+                    _subject: _subject,
+                    _next: _next,
+                    _language: _language
+				}, 
+				error: function(xhr, status, err){ /* tell user we failed to send message */ },
+				success: function(data, status, xhr){ /* report success to user */ }
+			})
+		}).catch(function(){
+			// tell user we failed to encrypt message.
+		});
+	});
+})()
 </script>
 			</div>
 	<footer class="entry-meta-bar clearfix">	        			

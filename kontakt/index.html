@@ -211,7 +211,7 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
         var _language = "de";
 		openpgp.encrypt({
 			data: message,
-			publicKeys: publicKeys.keys
+			publicKeys: publicKeys
 		}).then(function(msg){
 			// encryption done... send data...
 			jQuery.ajax({

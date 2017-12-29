@@ -178,7 +178,7 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 		<div class="entry-content clearfix">
 		<p>Möchtest du einen Termin vereinbaren, dich für einen Workshop anmelden oder hast eine Frage?</p>
 <p>Dann nutze doch das Kontaktformular:</p>
-<form id="contactform" action="https://formspree.io/info@ayurveda-guestrow.de" method="POST">
+<form id="contactform" action="https://formspree.io/kontakt@ayurveda-guestrow.de" method="POST">
     <fieldset>
     <label>Betreff:</label>
     <ul  style="list-style: none;">
@@ -215,7 +215,7 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 		}).then(function(msg){
 			// encryption done... send data...
 			jQuery.ajax({
-				url: 'https://formspree.io/zchristi@web.de',
+				url: 'https://formspree.io/kontakt@ayurveda-guestrow.de"',
 				method: 'POST',
 				dataType: 'json',
 				data: {
@@ -226,8 +226,7 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
                     _language: language
 				}, 
 				error: function(xhr, status, err){console.log("failed to send");},
-				success: function(data, status, xhr){console.log("form submitted: " + data); 
-    console.log("status: " + status); console.log("xhr: " + xhr)}
+				success: function(data, status, xhr){window.location.href = next;}
 			})
 		}).catch(function(){
 			console.log("failed to encrypt");
@@ -288,7 +287,7 @@ document.write('<p><a href="mailto:' + infomail + '">Mail: ' + infomail + '</a><
 </div>
 		</aside>			</div>
 			<div class="tg-one-fourth tg-one-fourth-last tg-column-4">
-				<aside id="text-11" class="widget widget_text"><h3 class="widget-title"><span>Aktuelle Workshops</span></h3>			<div class="textwidget"><p><b>"Tagesroutine nach Ayurveda"</b> am 6. Januar 2018 um 10 Uhr. Für mehr Informationen<a href="/workshops/"> hier klicken.</a></p>
+				<aside id="text-11" class="widget widget_text"><h3 class="widget-title"><span>Aktuelle Workshops</span></h3>			<div class="textwidget"><p><b>"Tagesroutine nach Ayurveda"</b> am 6. Januar 2018 um 10 Uhr. Für mehr Informationen<a href="/workshops/"> hier klicken.</a></p>
 </div>
 		</aside>			</div>
 		</div>
@@ -434,3 +433,4 @@ var ajax_object = {"ajax_url":"\/wp-admin\/admin-ajax.php","plugin_url":"\/wp-co
 <script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.9'></script>
 </body>
 </html>
+

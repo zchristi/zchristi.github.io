@@ -192,9 +192,8 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 </ul>
   <input type="email" name="email" placeholder="Deine Emailadresse (Pflichtfeld)"><br />
   <textarea name="message" placeholder="Deine Nachricht (Bitte Adresse und Telefonnummer angeben!)"></textarea><br />
-<input type="hidden" name="_next" value="//ayurveda-guestrow.de/prima-hat-alles-geklappt" />
 <input type="hidden" name="_language" value="de" />
-  <button type="submit">Senden002</button><br />
+  <button type="submit">Senden</button><br />
 </form>
 <script type="text/javascript">
 (function(){
@@ -222,7 +221,7 @@ Klicke auf das Hilfe-Symbol oben, um mehr zu erfahren.
 					email: email,
 					message: msg.data,
                     _subject: subject,
-                    _next: next,
+                    // _next: next,
                     _language: language
 				}, 
 				error: function(xhr, status, err){console.log("failed to send");},
